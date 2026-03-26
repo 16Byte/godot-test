@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://30ujnbmfuijs"]
+
+[ext_resource type="Script" uid="uid://vc6aa5tafc6m" path="res://Scripts/Player/PlayerController.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bhage0ek0rcv5" path="res://Assets/Art/Sprites/Player/player.png" id="1_v0iea"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+radius = 4.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D" unique_id=720727879]
+script = ExtResource("1_cvnsp")
+speed = 4.475
+jumpPower = 8.64
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1803036155]
+offset = Vector2(0, -15)
+zoom = Vector2(6, 6)
+
+[node name="PlayerAnimator" type="Node2D" parent="." unique_id=966789129]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator" unique_id=1437299547]
+root_node = NodePath("../../Camera")
+
+[node name="Sprite" type="Sprite2D" parent="PlayerAnimator" unique_id=461382525]
+position = Vector2(0, -8)
+texture = ExtResource("1_v0iea")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=770567824]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_cvnsp")

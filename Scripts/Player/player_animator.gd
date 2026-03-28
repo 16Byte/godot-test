@@ -5,7 +5,7 @@ extends Node2D
 @export var sprite : Sprite2D
 
 # basically Unity's Update() function
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	HandleFlip()
 	
 	# If our horizontal velocity is positive show the moving animation

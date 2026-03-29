@@ -100,6 +100,7 @@ radius = 4.0
 height = 14.0
 
 [node name="Player" type="CharacterBody2D" unique_id=720727879]
+collision_mask = 768
 script = ExtResource("1_cvnsp")
 speed = 4.475
 jumpPower = 8.64
@@ -107,6 +108,9 @@ jumpPower = 8.64
 [node name="Camera" type="Camera2D" parent="." unique_id=1803036155]
 offset = Vector2(0, -15)
 zoom = Vector2(6, 6)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="PlayerAnimator" type="Node2D" parent="." unique_id=966789129 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_6t5aa")

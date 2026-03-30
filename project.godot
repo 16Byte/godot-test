@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="test1"
-run/main_scene="uid://cfymp5thr7aki"
+run/main_scene="uid://cvttqw3fusu7j"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[autoload]
+
+GameManager="*uid://bvag5qffnvxmy"
 
 [input]
 
@@ -45,6 +49,7 @@ move_down={
 2d_physics/layer_1="player"
 2d_physics/layer_9="ground"
 2d_physics/layer_10="one_way_ground"
+2d_physics/layer_17="level_change_portal"
 
 [physics]
 

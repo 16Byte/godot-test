@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cts7xu66rxdpi"]
+
+[ext_resource type="Script" uid="uid://g50bxfitlg6r" path="res://Scenes/Prefabs/Level Prefabs/level_change_portal.gd" id="1_8nhf1"]
+[ext_resource type="Texture2D" uid="uid://bjy7aw45x02pk" path="res://Assets/Art/Sprites/Tiles/portalsSpriteSheet.png" id="1_71abf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71abf"]
+radius = 9.0
+height = 34.0
+
+[sub_resource type="Animation" id="Animation_kel2v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_1njr1"]
+resource_name = "blue_portal"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 48), Rect2(32, 0, 32, 48), Rect2(64, 0, 32, 48), Rect2(96, 0, 32, 48), Rect2(0, 0, 32, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_71abf"]
+resource_name = "grey_portal"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 144, 32, 48), Rect2(32, 144, 32, 48), Rect2(64, 144, 32, 48), Rect2(96, 144, 32, 48), Rect2(0, 144, 32, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_sag8e"]
+resource_name = "red_portal"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 48, 32, 48), Rect2(32, 48, 32, 48), Rect2(64, 48, 32, 48), Rect2(96, 48, 32, 48), Rect2(0, 48, 32, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_8nhf1"]
+resource_name = "yellow_portal"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 96, 32, 48), Rect2(32, 96, 32, 48), Rect2(64, 96, 32, 48), Rect2(96, 96, 32, 48), Rect2(0, 96, 32, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tq8e4"]
+_data = {
+&"RESET": SubResource("Animation_kel2v"),
+&"blue_portal": SubResource("Animation_1njr1"),
+&"grey_portal": SubResource("Animation_71abf"),
+&"red_portal": SubResource("Animation_sag8e"),
+&"yellow_portal": SubResource("Animation_8nhf1")
+}
+
+[node name="LevelChangePortal" type="Area2D" unique_id=386921059]
+collision_layer = 65536
+script = ExtResource("1_8nhf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=186621907]
+texture = ExtResource("1_71abf")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=69002019]
+shape = SubResource("CapsuleShape2D_71abf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1140316794]
+libraries/ = SubResource("AnimationLibrary_tq8e4")
+autoplay = &"blue_portal"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

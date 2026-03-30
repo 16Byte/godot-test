@@ -325,42 +325,42 @@ terrain_set_0/terrain_1/name = "ground"
 terrain_set_0/terrain_1/color = Color(1, 0, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_kpu7f")
 
-[sub_resource type="Curve2D" id="Curve2D_15qo1"]
+[sub_resource type="Curve2D" id="Curve2D_3n873"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -205)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_bc04g"]
+[sub_resource type="Curve2D" id="Curve2D_15qo1"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -176)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ifqnq"]
+[sub_resource type="Curve2D" id="Curve2D_bc04g"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -47, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_kbjuv"]
+[sub_resource type="Curve2D" id="Curve2D_ifqnq"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -52, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_msx0k"]
+[sub_resource type="Curve2D" id="Curve2D_kbjuv"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -50, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_m0xqr"]
+[sub_resource type="Curve2D" id="Curve2D_msx0k"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -38, 0)
@@ -388,27 +388,27 @@ position = Vector2(18, 0)
 
 [node name="MovingPlatformLarge" parent="MovingPlatforms" unique_id=2001928260 instance=ExtResource("3_3n873")]
 position = Vector2(-175, -19)
-curve = SubResource("Curve2D_15qo1")
+curve = SubResource("Curve2D_3n873")
 
 [node name="MovingPlatformLarge2" parent="MovingPlatforms" unique_id=1412110409 instance=ExtResource("3_3n873")]
 position = Vector2(1104, -158)
-curve = SubResource("Curve2D_bc04g")
+curve = SubResource("Curve2D_15qo1")
 
 [node name="MovingPlatformLarge3" parent="MovingPlatforms" unique_id=910380675 instance=ExtResource("3_3n873")]
 position = Vector2(241, -93)
-curve = SubResource("Curve2D_ifqnq")
+curve = SubResource("Curve2D_bc04g")
 path_time = 0.7
 
 [node name="MovingPlatformLarge4" parent="MovingPlatforms" unique_id=362644520 instance=ExtResource("3_3n873")]
 position = Vector2(153, -93)
-curve = SubResource("Curve2D_kbjuv")
+curve = SubResource("Curve2D_ifqnq")
 path_time = 2.06
 
 [node name="MovingPlatformLarge5" parent="MovingPlatforms" unique_id=34789210 instance=ExtResource("3_3n873")]
 position = Vector2(65, -93)
-curve = SubResource("Curve2D_msx0k")
+curve = SubResource("Curve2D_kbjuv")
 
 [node name="MovingPlatformLarge6" parent="MovingPlatforms" unique_id=106650727 instance=ExtResource("3_3n873")]
 position = Vector2(-23, -93)
-curve = SubResource("Curve2D_m0xqr")
+curve = SubResource("Curve2D_msx0k")
 path_time = 0.85

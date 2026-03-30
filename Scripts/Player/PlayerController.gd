@@ -8,10 +8,10 @@ var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
 
- #const SPEED = 30.0
- #const JUMP_VELOCITY = -400.0
-
 func _input(event: InputEvent) -> void: 
+	# Handle direction
+	direction = Input.get_axis("move_left", "move_right")
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jumpPower * jump_multiplier
@@ -27,9 +27,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_axis("move_left", "move_right")
+	# Handle the movement/deceleration.
 	if direction:
 		velocity.x = direction * speed * speed_multiplier
 	else:
